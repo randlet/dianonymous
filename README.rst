@@ -8,8 +8,7 @@ particular no effort is made to remove *burned-in* information from image
 files.  Use at your own risk and you alone are responsible for ensuring your
 patient data is properly anonymized.
 
-This is currently alpha level quality at best and may (probably?) not
-fully anonymize your DICOM files.
+This package "works for me" but MAY NOT FULLY ANONYMIZE YOUR DICOM FILES.
 
 * Free software: BSD license
 
