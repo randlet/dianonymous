@@ -1,4 +1,6 @@
 *.py[cod]
+anonymized
+
 
 # C extensions
 *.so

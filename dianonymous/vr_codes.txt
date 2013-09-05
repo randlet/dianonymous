@@ -1,0 +1,27 @@
+# AE : Application Name
+# AS : Age String: nnnW or nnnM or nnnY
+# AT : Attribute Tag gggg,eeee
+# CS : Code String
+# DA : Date yyyymmdd (check for yyyy.mm.dd also and convert)
+# DS : Decimal String may start with + or - and may be padded with l or t space
+# DT : Date Time YYYYMMDDHHMMSS.FFFFFF&ZZZZ (&ZZZ is optional & = + or -)
+# FL : Single precision floating pt number (float)
+# FD : Double precision floating pt number (double)
+# IS : Integer encoded as string. may be padded
+# LO : Character string. can be padded. cannot contain \ or any control chars except ESC
+# LT : Long Text. Leading spaces are significant. trailing spaces arent
+# OB : single trailing 0x00 to make even number of bytes. Transfer Syntax determines len
+# OF : Other Float String. floats
+# OW : Other Word String. words
+# PN : Person's Name 64byte max per component. 5 components. delimiter = ^
+# SH : Short String. may be padded
+# SL : signed long integer
+# SQ : Sequence of zero or more items
+# SS : signed short integer (word)
+# ST : Short Text of chars
+# TM : Time hhmmss.frac (or older format: hh:mm:ss.frac)
+# UI : Unique Identifier (delimiter = .) 0-9 only, trailing space to make even #
+# UL : Unsigned long integer
+# UN : unknown
+# US : Unsigned short integer (word)
+# UT : Unlimited Text. trailing spaces ignored

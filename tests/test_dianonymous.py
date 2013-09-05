@@ -7,11 +7,13 @@ test_dianonymous
 
 Tests for `dianonymous` module.
 """
+
+import dicom
 import os
 import shutil
 import unittest
 
-from dianonymous import dianonymous
+from dianonymous import dianonymous, anonymizer
 
 
 class TestDianonymous(unittest.TestCase):
@@ -46,8 +48,18 @@ class TestDianonymous(unittest.TestCase):
         expected = set(input_paths)
         self.assertSetEqual(expected, set(list(dianonymous.get_input_paths(self.test_dir, True))))
 
-    def test_anonymize(self):
+    def test_anonymize_no_id(self):
         dianonymous.anonymize(self.test_dir, recurse=True)
+
+    def test_anonymize_with_id(self):
+        dcm = dicom.read_file(os.path.join(self.test_dir,"rtplan.dcm"), force=True)
+        anonymizer.anonymize(dcm, patient_id="testid")
+        self.assertEqual(dcm.PatientID, "testid")
+
+    def test_anonymize_with_name(self):
+        dcm = dicom.read_file(os.path.join(self.test_dir,"rtplan.dcm"), force=True)
+        anonymizer.anonymize(dcm, patient_name="testname")
+        self.assertEqual(dcm.PatientsName, "testname")
 
     def tearDown(self):
         shutil.rmtree(self.anonymous_dir)
