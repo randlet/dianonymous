@@ -22,9 +22,8 @@ Install
 -------
 
 This will install dianonymous in your Python packages directory
-as well as a script called dianon in your Python scripts directory.
+as well as a script called dianon in your Python scripts directory.  ::
 
-::
     git clone git@github.com:randlet/dianonymous.git
     cd dianonymous
     python setup.py install
@@ -32,7 +31,8 @@ as well as a script called dianon in your Python scripts directory.
 Run Tests
 ---------
 
-::
+Running the dianonymous tests ::
+
     git clone git@github.com:randlet/dianonymous.git
     cd dianonymous
     python setup.py nosetests
@@ -43,31 +43,28 @@ Usage
 From The Command Line
 =====================
 
-Anonymize a DICOM file and write to ./anonymize/
+Anonymize a DICOM file and write to ./anonymize/ ::
 
-::
     dianon path/to/file.dcm
 
-Recursively anonymize all DICOM files in path/to/folder and write them to ./anonymize/
+Recursively anonymize all DICOM files in path/to/folder and write them to ./anonymize/ ::
 
-::
     dianon -r path/to/folder
 
-Recursively anonymize all DICOM files in path/to/folder and write them to different/output/path/
+Recursively anonymize all DICOM files in path/to/folder and write them to different/output/path/ ::
 
-::
     dianon -r -o different/output/path path/to/folder
 
-Anonymize a DICOM file and write to ./anonymize/
+Anonymize a DICOM file and write to ./anonymize/::
 
-::
     dianon -r -o different/output/path path/to/folder
 
 
 From Python
 ===========
 
-::
+From a Python script or interpreter ::
+
     import dianonymous
     paths_to_files_and_dirs = ["dir1/","dir2/","file1.dcm", "dir3/file2.dcm",...]
     output_dir = "./anonymized"
