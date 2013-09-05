@@ -4,7 +4,8 @@ Dianonymous
 
 A Python package for anonymizing DICOM files.  ***DISCLAIMER*** the anonymization provided this package is not guaranteed to be complete! In particular no effort is made to remove *burned-in* information from image files.  Use at your own risk and you alone are responsible for ensuring your patient data is properly anonymized.
 
-This is currently alpha level quality at best!
+This is currently alpha level quality at best and may (probably?) not
+fully anonymize your DICOM files.
 
 * Free software: BSD license
 
@@ -68,3 +69,7 @@ From Python
 
 
 
+Acknowledgements
+----------------
+
+Ideas for the anonymizer were taken from both the pydicom and dicompyler packages
