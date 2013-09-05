@@ -6,11 +6,11 @@ import hashlib
 import os
 import sys
 
-import anonymizer
+from . import anonymizer
 
 PATIENT_ID = (0x0010, 0x0020)
 
-def anonymize(inputs, output="anonymized", anon_id=None, anon_name=None, recurse=False, private=True, curves=True, print_progress=True):
+def anonymize(inputs, output="anonymized", anon_id=None, anon_name=None, recurse=False, private=True, curves=True, log=None):
     """
     Anonymize DICOM files and write new DICOM files to the output directory.
     The original files will be untouched.
@@ -26,6 +26,8 @@ def anonymize(inputs, output="anonymized", anon_id=None, anon_name=None, recurse
     private: Anonymize all private tags. Default is True.
 
     curves: Remove all curves. Default is True.
+
+    log: object with a .write method or None. Default is None
 
     """
 
@@ -51,8 +53,8 @@ def anonymize(inputs, output="anonymized", anon_id=None, anon_name=None, recurse
             except OSError:
                 pass
             dcm.save_as(out_path)
-            if print_progress:
-                sys.stdout.write("Anonymized & wrote %s to %s\n" % (inp, out_path))
+            if log:
+                log.write("Anonymized & wrote %s to %s\n" % (inp, out_path))
         except (MemoryError, KeyError):
             pass
 
@@ -135,5 +137,5 @@ if __name__ == "__main__": #pragma nocover
     parser.add_argument( 'files', nargs="+", help="Input files and directories")
 
     args = parser.parse_args()
-    print args
-    anonymize(args.files, output=args.output, anon_id=args.patient_id, anon_name=args.patient_name, recurse=args.recurse, print_progress=True)
+
+    anonymize(args.files, output=args.output, anon_id=args.patient_id, anon_name=args.patient_name, recurse=args.recurse, log=sys.stdout)
