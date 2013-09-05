@@ -2,7 +2,11 @@
 Dianonymous
 ===============================
 
-A Python package for anonymizing DICOM files.  ***DISCLAIMER*** the anonymization provided this package is not guaranteed to be complete! In particular no effort is made to remove *burned-in* information from image files.  Use at your own risk and you alone are responsible for ensuring your patient data is properly anonymized.
+A Python package for anonymizing DICOM files.  ***DISCLAIMER*** the
+anonymization provided this package is not guaranteed to be complete! In
+particular no effort is made to remove *burned-in* information from image
+files.  Use at your own risk and you alone are responsible for ensuring your
+patient data is properly anonymized.
 
 This is currently alpha level quality at best and may (probably?) not
 fully anonymize your DICOM files.
@@ -18,13 +22,17 @@ Install
 -------
 
 This will install dianonymous in your Python packages directory
-as well as an exe;set
+as well as a script called dianon in your Python scripts directory.
+
+::
 git clone git@github.com:randlet/dianonymous.git
 cd dianonymous
 python setup.py install
 
 Run Tests
 ---------
+
+::
 git clone git@github.com:randlet/dianonymous.git
 cd dianonymous
 python setup.py nosetests
