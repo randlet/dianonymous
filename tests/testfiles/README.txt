@@ -1,3 +1,7 @@
+Note: These files were copied from pydicom which includes the following message about these DICOM test files. RT
+
+
+
 Test Files used for testing pydicom 
 -----------------------------------
 I obtained images to test the pydicom code, and revised them as follow:
